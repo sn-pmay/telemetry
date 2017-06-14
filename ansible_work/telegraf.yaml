@@ -27,7 +27,7 @@
         dest: /tmp/telegraf_1.3.1-1.x86_64.deb
 
     - name: Check if telegraf is installed
-      shell: dpkg-query -W "telegraf" 2>&1
+      shell: dpkg-query -W \"telegraf\" >/dev/null 2>&1
       ignore_errors: true
       register: telegraf_not_installed_deb
 
