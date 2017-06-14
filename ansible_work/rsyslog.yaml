@@ -1,0 +1,25 @@
+- hosts: fs-centos, fs-onl
+  tasks:
+    - name: Check if RSYSLOG is already configured
+      stat: path=/etc/rsyslog.d/100-rsyslog-fwd.conf
+      register: rsyslog_fwd
+
+    - name: Check syslog forwarding settings
+      shell: cat /etc/rsyslog.d/100-rsyslog-fwd.conf
+      register: rsyslog_fwd_contents
+      when: rsyslog_fwd.stat.exists
+
+    - name: Set up custom rsyslog forward
+      when:
+        rsyslog_fwd.stat.exists == false
+        #rsyslog_fwd_contents.stdout.find('{{syslog_aggregator}}') != -1
+      copy:
+        content: "*.* @{{syslog_aggregator}};RSYSLOG_ForwardFormat"
+        #content: "*.* @192.168.100.73;RSYSLOG_ForwardFormat"
+        dest: /etc/rsyslog.d/100-rsyslog-fwd.conf
+        backup: yes
+      notify: Restart rsyslog
+
+  handlers:
+  - name: Restart rsyslog
+    service: name=rsyslog enabled=yes state=restarted

@@ -1,0 +1,13 @@
+- hosts: fs-centos, fs-onl
+
+  tasks:
+  - name: Set hostname
+    when: ansible_hostname == "localhost" or
+      ansible_hostname == "(none)"
+    uri:
+      body: "{'Hostname':'localhost-{{ansible_default_ipv4.address.split('.')[3]}}'}"
+      method: PATCH
+      url: http://localhost:8080/public/v1/config/SystemParam
+      body_format: json
+
+

@@ -1,0 +1,78 @@
+- hosts: fs-centos, fs-onl
+  tasks:
+    - name: Check if Adam's custom telegraf is there
+      stat: path=/usr/bin/telegraf_adam
+      register: telegraf_custom
+
+    - name: Copy Adam's custom telegraf into /usr/bin
+      when:
+        - telegraf_custom.stat.exists == false
+      copy:
+        src: telegraf/telegraf_adam
+        dest: /usr/bin/telegraf_adam
+        mode: a+x
+
+- hosts: fs-centos
+  tasks:
+    - name: Copy telegraf distribution (RPM)
+      copy:
+        src: telegraf/telegraf-1.3.1-1.x86_64.rpm
+        dest: /tmp/telegraf-1.3.1-1.x86_64.rpm
+
+- hosts: fs-onl
+  tasks:
+    - name: Copy telegraf distribution (DEB)
+      copy:
+        src: telegraf/telegraf_1.3.1-1_amd64.deb
+        dest: /tmp/telegraf_1.3.1-1.x86_64.deb
+
+    - name: Check if telegraf is installed
+      shell: dpkg-query -W "telegraf" 2>&1
+      ignore_errors: true
+      register: telegraf_not_installed_deb
+
+    - name: Install telegraf from DEB
+      apt: deb="/tmp/telegraf_1.3.1-1.x86_64.deb"
+      when: telegraf_not_installed_deb
+      register: telegraf_deb_installed
+
+
+- hosts: fs-centos, fs-onl
+  tasks:
+    - name: Register original telegraf binary
+      stat: path=/usr/bin/telegraf
+      register: telegraf
+
+    - name: Move telegraf binary aside
+      command: mv /usr/bin/telegraf /usr/bin/telegraf.dist
+      when: telegraf.stat.islnk is defined and telegraf.stat.islnk == False
+
+    - name: Create a telegraf symlink
+      file:
+        src: /usr/bin/telegraf_adam
+        dest: /usr/bin/telegraf
+        state: link
+      when: telegraf_custom.stat.exists is defined
+
+    - name: Register telegraf config path
+      stat: path=/etc/telegraf/telegraf.conf
+      register: telegraf_conf
+
+    - name: Copy telegraf master config
+      copy:
+        src: telegraf/telegraf.conf
+        dest: /etc/telegraf/
+        backup: yes
+      when: telegraf_conf.stat.exists
+
+    - name: Copy telegraf modular configs
+      copy:
+        src: telegraf/telegraf.d
+        dest: /etc/telegraf/
+        backup: yes
+      notify: Restart telegraf
+      when: telegraf_conf.stat.exists
+
+  handlers:
+  - name: Restart telegraf
+    service: name=telegraf enabled=yes state=restarted
