@@ -10,4 +10,10 @@
       url: http://localhost:8080/public/v1/config/SystemParam
       body_format: json
 
-
+   - name: Set hostname
+     when: ansible_hostname == "localhost" or
+      ansible_hostname == "(none)"
+    copy:
+      content: "127.0.1.1         localhost-{{ansible_default_ipv4.address.split('.')[3]}}'}"
+      dest: /etc/hosts
+      backup: yes
