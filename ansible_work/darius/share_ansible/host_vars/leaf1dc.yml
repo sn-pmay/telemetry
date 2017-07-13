@@ -1,0 +1,309 @@
+---
+ConfigOrder: [BGPGlobal,BGPv4Neighbor,LLDPGlobal,Vlan,StpPort,StpBridgeInstance,Port,IPv4Intf]
+Objects:
+  BGPGlobal:
+  - Vrf: default
+    ASNum: '65003'
+    RouterId: 3.3.3.3
+    Disabled: false
+    UseMultiplePaths: false
+    EBGPMaxPaths: 0
+    EBGPAllowMultipleAS: false
+    IBGPMaxPaths: 0
+    DefaultMED: 0
+    Defaultv4Route: false
+    Defaultv6Route: false
+    Redistribution: []
+  BGPv4Neighbor:
+  - NeighborAddress: 10.1.1.1
+    IntfRef: ''
+    Description: ''
+    Disabled: false
+    PeerGroup: ''
+    PeerAS: '65001'
+    LocalAS: ''
+    UpdateSource: ''
+    NextHopSelf: false
+    AuthPassword: ''
+    RouteReflectorClusterId: 0
+    RouteReflectorClient: false
+    MultiHopEnable: false
+    MultiHopTTL: 0
+    ConnectRetryTime: 0
+    HoldTime: 0
+    KeepaliveTime: 0
+    AddPathsRx: false
+    AddPathsMaxTx: 0
+    BfdEnable: true
+    BfdSessionParam: default
+    MaxPrefixes: 0
+    MaxPrefixesThresholdPct: 80
+    MaxPrefixesDisconnect: false
+    MaxPrefixesRestartTimer: 0
+    AdjRIBInFilter: ''
+    AdjRIBOutFilter: ''
+  - NeighborAddress: 10.2.2.1
+    IntfRef: ''
+    Description: ''
+    Disabled: false
+    PeerGroup: ''
+    PeerAS: '65002'
+    LocalAS: ''
+    UpdateSource: ''
+    NextHopSelf: false
+    AuthPassword: ''
+    RouteReflectorClusterId: 0
+    RouteReflectorClient: false
+    MultiHopEnable: false
+    MultiHopTTL: 0
+    ConnectRetryTime: 0
+    HoldTime: 0
+    KeepaliveTime: 0
+    AddPathsRx: false
+    AddPathsMaxTx: 0
+    BfdEnable: true
+    BfdSessionParam: default
+    MaxPrefixes: 0
+    MaxPrefixesThresholdPct: 80
+    MaxPrefixesDisconnect: false
+    MaxPrefixesRestartTimer: 0
+    AdjRIBInFilter: ''
+    AdjRIBOutFilter: ''
+  IPv4Intf:
+  - IntfRef: fpPort4
+    IpAddr: 10.1.1.2/30
+    AdminState: UP
+  - IntfRef: fpPort5
+    IpAddr: 10.2.2.2/30
+    AdminState: UP
+  - IntfRef: vlan10
+    IpAddr: 10.10.10.1/24
+    AdminState: UP
+  - IntfRef: vlan20
+    IpAddr: 10.10.20.1/24
+    AdminState: UP
+  LLDPGlobal:
+  - Vrf: default
+    Enable: true
+    TransmitInterval: 0
+    TxRxMode: TxRx
+    SnoopAndDrop: false
+  Port:
+  - IntfRef: fpPort1
+    IfIndex: 0
+    Description: Intf To Tor1DC
+    PhyIntfType: veth
+    AdminState: UP
+    MacAddr: b2:c4:e2:3f:69:9a
+    Speed: 1000
+    Duplex: FULL
+    Autoneg: AUTO
+    MediaType: veth
+    Mtu: 1500
+    BreakOutMode: unsupported
+    LoopbackMode: ''
+    EnableFEC: false
+    PRBSTxEnable: false
+    PRBSRxEnable: false
+    PRBSPolynomial: ''
+    StormControlProfile: NONE
+    PcpToCosProfileRef: default
+    DscpToCosProfileRef: default
+    SchedProfileRef: default
+  - IntfRef: fpPort2
+    IfIndex: 2
+    Description: Intf To Tor2DC
+    PhyIntfType: veth
+    AdminState: UP
+    MacAddr: f2:ca:6d:73:30:82
+    Speed: 1000
+    Duplex: FULL
+    Autoneg: AUTO
+    MediaType: veth
+    Mtu: 1500
+    BreakOutMode: unsupported
+    LoopbackMode: ''
+    EnableFEC: false
+    PRBSTxEnable: false
+    PRBSRxEnable: false
+    PRBSPolynomial: ''
+    StormControlProfile: NONE
+    PcpToCosProfileRef: default
+    DscpToCosProfileRef: default
+    SchedProfileRef: default
+  - IntfRef: fpPort3
+    IfIndex: 3
+    Description: Intf To Leaf2DC
+    PhyIntfType: veth
+    AdminState: UP
+    MacAddr: 42:70:46:ed:50:a8
+    Speed: 1000
+    Duplex: FULL
+    Autoneg: AUTO
+    MediaType: veth
+    Mtu: 1500
+    BreakOutMode: unsupported
+    LoopbackMode: ''
+    EnableFEC: false
+    PRBSTxEnable: false
+    PRBSRxEnable: false
+    PRBSPolynomial: ''
+    StormControlProfile: NONE
+    PcpToCosProfileRef: default
+    DscpToCosProfileRef: default
+    SchedProfileRef: default
+  - IntfRef: fpPort4
+    IfIndex: 4
+    Description: Intf To Spine1DC
+    PhyIntfType: veth
+    AdminState: UP
+    MacAddr: 52:f6:1b:98:65:63
+    Speed: 1000
+    Duplex: FULL
+    Autoneg: AUTO
+    MediaType: veth
+    Mtu: 1500
+    BreakOutMode: unsupported
+    LoopbackMode: ''
+    EnableFEC: false
+    PRBSTxEnable: false
+    PRBSRxEnable: false
+    PRBSPolynomial: ''
+    StormControlProfile: NONE
+    PcpToCosProfileRef: default
+    DscpToCosProfileRef: default
+    SchedProfileRef: default
+  - IntfRef: fpPort5
+    IfIndex: 5
+    Description: Intf To Spine2DC
+    PhyIntfType: veth
+    AdminState: UP
+    MacAddr: aa:87:a6:b2:16:9a
+    Speed: 1000
+    Duplex: FULL
+    Autoneg: AUTO
+    MediaType: veth
+    Mtu: 1500
+    BreakOutMode: unsupported
+    LoopbackMode: ''
+    EnableFEC: false
+    PRBSTxEnable: false
+    PRBSRxEnable: false
+    PRBSPolynomial: ''
+    StormControlProfile: NONE
+    PcpToCosProfileRef: default
+    DscpToCosProfileRef: default
+    SchedProfileRef: default
+  StpBridgeInstance:
+  - Vlan: 10
+    AdminState: UP
+    Address: 00-00-00-00-00-00
+    Priority: 4096 
+    MaxAge: 20
+    HelloTime: 2
+    ForwardDelay: 15
+    ForceVersion: 2
+    TxHoldCount: 6
+  - Vlan: 20
+    AdminState: UP
+    Address: 00-00-00-00-00-00
+    Priority: 4096
+    MaxAge: 20
+    HelloTime: 2
+    ForwardDelay: 15
+    ForceVersion: 2
+    TxHoldCount: 6
+  StpPort:
+  - Vlan: 10
+    IntfRef: fpPort1
+    AdminState: UP
+    Priority: 128
+    ProtocolMigration: 1
+    AdminPointToPoint: 2
+    AdminEdgePort: 2
+    AdminPathCost: 0
+    BpduGuard: 2
+    BpduGuardInterval: 15
+    BridgeAssurance: 2
+    InternalCreate: 2
+  - Vlan: 10
+    IntfRef: fpPort2
+    AdminState: UP
+    Priority: 128
+    ProtocolMigration: 1
+    AdminPointToPoint: 2
+    AdminEdgePort: 2
+    AdminPathCost: 0
+    BpduGuard: 2
+    BpduGuardInterval: 15
+    BridgeAssurance: 2
+    InternalCreate: 2
+  - Vlan: 10
+    IntfRef: fpPort3
+    AdminState: UP
+    Priority: 128
+    ProtocolMigration: 1
+    AdminPointToPoint: 2
+    AdminEdgePort: 2
+    AdminPathCost: 0
+    BpduGuard: 2
+    BpduGuardInterval: 15
+    BridgeAssurance: 2
+    InternalCreate: 2
+  - Vlan: 20
+    IntfRef: fpPort1
+    AdminState: UP
+    Priority: 128
+    ProtocolMigration: 1
+    AdminPointToPoint: 2
+    AdminEdgePort: 2
+    AdminPathCost: 0
+    BpduGuard: 2
+    BpduGuardInterval: 15
+    BridgeAssurance: 2
+    InternalCreate: 2
+  - Vlan: 20
+    IntfRef: fpPort2
+    AdminState: UP
+    Priority: 128
+    ProtocolMigration: 1
+    AdminPointToPoint: 2
+    AdminEdgePort: 2
+    AdminPathCost: 0
+    BpduGuard: 2
+    BpduGuardInterval: 15
+    BridgeAssurance: 2
+    InternalCreate: 2
+  - Vlan: 20
+    IntfRef: fpPort3
+    AdminState: UP
+    Priority: 128
+    ProtocolMigration: 1
+    AdminPointToPoint: 2
+    AdminEdgePort: 2
+    AdminPathCost: 0
+    BpduGuard: 2
+    BpduGuardInterval: 15
+    BridgeAssurance: 2
+    InternalCreate: 2
+  Vlan:
+  - VlanId: 10
+    AdminState: UP
+    Description: none
+    AutoState: UP
+    IntfList:
+    - fpPort1
+    - fpPort2
+    - fpPort3
+    UntagIntfList: []
+  - VlanId: 20
+    AdminState: UP
+    Description: none
+    AutoState: UP
+    IntfList:
+    - fpPort1
+    - fpPort2
+    - fpPort3
+    UntagIntfList: []
+
+

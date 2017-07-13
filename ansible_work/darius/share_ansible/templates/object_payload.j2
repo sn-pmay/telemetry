@@ -1,0 +1,6 @@
+#jinja2:lstrip_blocks: True
+{% for object_instance in ConfigOrder %}
+  {% for object in Objects[object_instance] %}
+{{ object_instance }}:{{ object }}
+  {% endfor %}
+{% endfor %}
