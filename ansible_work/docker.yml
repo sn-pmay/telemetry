@@ -1,0 +1,90 @@
+- hosts: fs-centos, fs-onl
+  tasks:
+    - name: Slam the clock
+      command: ntpd -q -g -x
+      tags:
+        - ntpd_ntpdate
+    - name: Update apt cache
+      apt: update_cache=yes
+      tags:
+        - docker_initial_apt
+    - name: Install apt-transport-https
+      apt: name=apt-transport-https state=present
+      tags:
+        - docker_install_dependency1
+    - name: install docker
+      command: sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+      tags:
+        - docker_install_key
+    - name: add deb repo
+      command: sudo touch /etc/apt/sources.list.d/docker.list
+      tags:
+        - docker_add_repo
+    - lineinfile: dest="/etc/apt/sources.list.d/docker.list" line="{{item}}"
+      with_items:
+      - "deb https://apt.dockerproject.org/repo ubuntu-trusty main"
+      tags:
+        - docker_populate_repo
+    - name: apt update
+      apt: update_cache=yes
+      tags:
+        - docker_apt_update_cache
+    # The command fails with: WARNING: The following packages cannot be authenticated!
+    # This is because apt-key update fails since the brand-new system thinks it is 2001.
+    # So, a pre-requisite to this run is the time on the host not being a complete DURP.
+    # Perhaps sudo ntpd -q -g -x or something?
+    - apt: name=docker-engine state=present force=yes
+      tags:
+        - docker_install_engine
+    - name: Pip-based install
+      register: docker_py_pip
+      command: sudo pip install --upgrade docker-py
+      tags:
+        - pip_install
+
+    - name: Create Docker Network
+      docker_network:
+        name: telemetry_nw
+        ipam_options:
+          subnet: '172.250.0.0/24'
+          # gateway: 172.250.0.1
+          # iprange:
+      tags:
+        - docker_create_network
+      register: telemetry_nw_created
+
+    - name: Create InfluxDB container
+      when: telemetry_nw_created
+      tags:
+        - docker_influxdb_container
+      docker_container:
+        name: influxdb
+        image: influxdb
+        volumes: 
+          - /var/lib/influxdb
+        hostname: influxdb
+        ports: 
+          - "8086:8086"
+        networks: 
+          - name: "telemetry_nw"
+            ipv4_address: "172.250.0.100"
+
+    - name: Create Grafana container
+      when: telemetry_nw_created
+      tags:
+        - docker_grafana_container
+      docker_container:
+        name: grafana
+        image: grafana/grafana
+        volumes: 
+          - /var/lib/grafana
+        hostname: grafana
+        ports: 
+          - "3000:3000"
+        networks: 
+          - name: "telemetry_nw"
+            ipv4_address: "172.250.0.101"
+    # - name: add user mod
+    #   command: sudo usermod -aG docker {{remote_user}}
+    # - name: add user mod
+    #   command: sudo usermod -aG docker {{action_user}}

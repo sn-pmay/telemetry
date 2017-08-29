@@ -1,14 +1,14 @@
 ---
-- hosts: 172.31.0.50 #Nasdaq_Topology
+- hosts: spine2dc #Nasdaq_Topology 
   remote_user: root
   tasks:
-
+  
   - name: Generate Flexswitch Rest Calls
-    template:
-      src: /data/SnapRoute/telemetry/ansible_work/darius/share_ansible/templates/object_payload.j2
-      dest: "/data/SnapRoute/telemetry/ansible_work/darius/share_ansible/generated_rest/{{inventory_hostname}}_restcalls.json"
+    template: 
+      src: /etc/ansible/templates/object_payload.j2 
+      dest: "/etc/ansible/generated_rest/{{inventory_hostname}}_restcalls.json"
     delegate_to: localhost
-
+    
   - name: Is Flexswitch Ready?
     uri:
       url: "http://localhost:8080/public/v1/state/systemstatus"
@@ -20,4 +20,4 @@
 
   - name: Kick off API Calls
     include: flexApiCalls.yml payload_mapping="{{item}}"
-    with_lines: cat "/data/SnapRoute/telemetry/ansible_work/darius/share_ansible/generated_rest/{{inventory_hostname}}_restcalls.json" 
+    with_lines: cat "/etc/ansible/generated_rest/{{inventory_hostname}}_restcalls.json" 
