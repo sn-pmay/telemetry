@@ -3,8 +3,8 @@
     - name: Check if Adam's custom telegraf is there
       stat: path=/usr/bin/telegraf_adam
       register: telegraf_custom
-    tags:
-        - telegraf_custom_check
+      tags:
+          - telegraf_custom_check
 
     - name: Copy Adam's custom telegraf into /usr/bin
       when:
@@ -83,14 +83,15 @@
 
     - name: Copy Grafana JSON files 
       copy:
-        src: grafana/*
-        dest: /tmp/*
+        src: grafana
+        dest: /tmp/
       tags:
         - grafana_copy_json
         
     - name: Install Grafana datasource file
       uri:
-        body: "{{ lookup ('file','/tmp/datasource.json') }}"
+        body: "{{ lookup ('file','grafana/datasource.json') }}"
+        # body: "{{ lookup ('file','/tmp/grafana/datasource.json') }}"
         method: POST
         url: http://172.250.0.101:3000/api/datasources
         body_format: json
@@ -110,9 +111,9 @@
     #   with_fileglob: /tmp/dashboard_*json
 
     - name: Install Grafana dashboards
-      with_fileglob: /tmp/dashboard_*json
+      with_fileglob: grafana/dashboard_*json
       uri:
-        body: "{{ lookup ('file',{{ item }} }}"
+        body: "{{ lookup ('file',item) }}"
         method: POST
         url: http://172.250.0.101:3000/api/dashboards/db
         body_format: json
