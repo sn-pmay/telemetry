@@ -15,5 +15,3 @@ For now, this setup in two parts:
 ** Installs a datasource into Grafana for the local telemetry
 ** Installs a set of dashboards into Grafana as a starting point
 
-# ToDo: 
-Make the run properly conditional on architecture - sadly, Docker does not run on ARMEL, nor have I had luck compiling Telegraf for that platform.

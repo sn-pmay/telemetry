@@ -1,5 +1,14 @@
 - hosts: fs-centos, fs-onl
   tasks:
+    - fail: Stop if the hostname hasn't been changed from localhost|(none)
+      when: ansible_hostname == "localhost" or
+        ansible_hostname == "(none)"
+      msg: The hostname is set to either "localhost" or "(none)". Please fix before enabling telemetry.
+
+    - fail: Stop if the architecture is not AMD64
+      when: ansible_architecture != x86_64
+      msg: Currently, only x86_64 is supported
+
     - name: Check if Adam's custom telegraf is there
       stat: path=/usr/bin/telegraf_adam
       register: telegraf_custom
