@@ -93,7 +93,3 @@
         networks: 
           - name: "telemetry_nw"
             ipv4_address: "172.250.0.101"
-    # - name: add user mod
-    #   command: sudo usermod -aG docker {{remote_user}}
-    # - name: add user mod
-    #   command: sudo usermod -aG docker {{action_user}}
