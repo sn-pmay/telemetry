@@ -114,11 +114,6 @@
       tags:
         - grafana_install_datasource
 
-    # - name: Make a list of all the dashboards copied over
-    #   command: ls {{ item }}
-    #   register: grafana_dashboards
-    #   with_fileglob: /tmp/dashboard_*json
-
     - name: Install Grafana dashboards
       with_fileglob: grafana/dashboard_*json
       uri:
