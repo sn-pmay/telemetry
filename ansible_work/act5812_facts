@@ -1,0 +1,1022 @@
+172.31.0.52 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.17.0.1", 
+            "192.168.1.1", 
+            "172.31.0.52", 
+            "172.250.0.1"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::42:7ff:fea2:8d70", 
+            "fe80::5c76:9fff:fe49:ae5b", 
+            "fe80::142f:f2ff:fe81:4113", 
+            "fe80::8eea:1bff:fe93:fbb7", 
+            "fe80::74ed:39ff:fe17:d93b", 
+            "fe80::42:c9ff:feb5:5ed4", 
+            "fe80::ec45:5bff:fed5:7d94", 
+            "fe80::b87c:97ff:fe4c:2608"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bcm0": {
+            "active": false, 
+            "device": "bcm0", 
+            "macaddress": "02:10:18:c9:64:18", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_bios_date": "08/20/2015", 
+        "ansible_bios_version": "5.6.5", 
+        "ansible_bond0": {
+            "active": false, 
+            "device": "bond0", 
+            "lacp_rate": "slow", 
+            "macaddress": "ae:95:a3:ea:9b:bb", 
+            "miimon": "0", 
+            "mode": "balance-rr", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "slaves": [], 
+            "type": "bonding"
+        }, 
+        "ansible_br_62a13ede064d": {
+            "active": true, 
+            "device": "br-62a13ede064d", 
+            "id": "8000.0242c9b55ed4", 
+            "interfaces": [
+                "veth09e2aa9", 
+                "vethb18f297"
+            ], 
+            "ipv4": {
+                "address": "172.250.0.1", 
+                "broadcast": "global", 
+                "netmask": "255.255.255.0", 
+                "network": "172.250.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::42:c9ff:feb5:5ed4", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "02:42:c9:b5:5e:d4", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "stp": false, 
+            "type": "bridge"
+        }, 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/kernel-3.16-lts-x86_64-all", 
+            "console": "ttyS1,115200n8", 
+            "nopat": true, 
+            "onl_platform": "x86-64-accton-as5812-54t-r0"
+        }, 
+        "ansible_date_time": {
+            "date": "2017-09-01", 
+            "day": "01", 
+            "epoch": "1504272487", 
+            "hour": "09", 
+            "iso8601": "2017-09-01T13:28:07Z", 
+            "iso8601_basic": "20170901T092807292779", 
+            "iso8601_basic_short": "20170901T092807", 
+            "iso8601_micro": "2017-09-01T13:28:07.292963Z", 
+            "minute": "28", 
+            "month": "09", 
+            "second": "07", 
+            "time": "09:28:07", 
+            "tz": "EDT", 
+            "tz_offset": "-0400", 
+            "weekday": "Friday", 
+            "weekday_number": "5", 
+            "weeknumber": "35", 
+            "year": "2017"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "172.31.0.52", 
+            "alias": "ma1", 
+            "broadcast": "172.31.0.255", 
+            "gateway": "172.31.0.10", 
+            "interface": "ma1", 
+            "macaddress": "8c:ea:1b:93:fb:b7", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "172.31.0.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sda": {
+                "holders": [], 
+                "host": "", 
+                "model": "scsi_debug", 
+                "partitions": {}, 
+                "removable": "0", 
+                "rotational": "0", 
+                "scheduler_mode": "cfq", 
+                "sectors": "16384", 
+                "sectorsize": "512", 
+                "size": "8.00 MB", 
+                "support_discard": "0", 
+                "vendor": "Linux"
+            }, 
+            "sdb": {
+                "holders": [], 
+                "host": "USB controller: Intel Corporation Atom processor C2000 USB Enhanced Host Controller (rev 02)", 
+                "model": "USB DISK 2.0", 
+                "partitions": {
+                    "sdb1": {
+                        "sectors": "4096", 
+                        "sectorsize": 512, 
+                        "size": "2.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "sdb2": {
+                        "sectors": "262144", 
+                        "sectorsize": 512, 
+                        "size": "128.00 MB", 
+                        "start": "6144"
+                    }, 
+                    "sdb3": {
+                        "sectors": "262144", 
+                        "sectorsize": 512, 
+                        "size": "128.00 MB", 
+                        "start": "268288"
+                    }, 
+                    "sdb4": {
+                        "sectors": "262144", 
+                        "sectorsize": 512, 
+                        "size": "128.00 MB", 
+                        "start": "530432"
+                    }, 
+                    "sdb5": {
+                        "sectors": "2097152", 
+                        "sectorsize": 512, 
+                        "size": "1.00 GB", 
+                        "start": "792576"
+                    }, 
+                    "sdb6": {
+                        "sectors": "12574720", 
+                        "sectorsize": 512, 
+                        "size": "6.00 GB", 
+                        "start": "2889728"
+                    }
+                }, 
+                "removable": "1", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "15466496", 
+                "sectorsize": "512", 
+                "size": "7.38 GB", 
+                "support_discard": "0", 
+                "vendor": null
+            }, 
+            "sdc": {
+                "holders": [], 
+                "host": "USB controller: Intel Corporation Atom processor C2000 USB Enhanced Host Controller (rev 02)", 
+                "model": "Survivor 3.0", 
+                "partitions": {}, 
+                "removable": "1", 
+                "rotational": "1", 
+                "scheduler_mode": "cfq", 
+                "sectors": "62554112", 
+                "sectorsize": "512", 
+                "size": "29.83 GB", 
+                "support_discard": "0", 
+                "vendor": "Corsair"
+            }
+        }, 
+        "ansible_distribution": "Debian", 
+        "ansible_distribution_major_version": "8", 
+        "ansible_distribution_release": "jessie", 
+        "ansible_distribution_version": "8.8", 
+        "ansible_dns": {
+            "nameservers": [
+                "172.31.0.10"
+            ], 
+            "options": {
+                "attempts": "2", 
+                "rotate": true, 
+                "timeout": "2"
+            }
+        }, 
+        "ansible_docker0": {
+            "active": true, 
+            "device": "docker0", 
+            "id": "8000.024207a28d70", 
+            "interfaces": [
+                "veth263bcfc", 
+                "veth7b57d5c"
+            ], 
+            "ipv4": {
+                "address": "172.17.0.1", 
+                "broadcast": "global", 
+                "netmask": "255.255.0.0", 
+                "network": "172.17.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::42:7ff:fea2:8d70", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "02:42:07:a2:8d:70", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "stp": false, 
+            "type": "bridge"
+        }, 
+        "ansible_domain": "", 
+        "ansible_dummy0": {
+            "active": false, 
+            "device": "dummy0", 
+            "macaddress": "76:7e:86:6b:8e:d7", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_env": {
+            "HOME": "/root", 
+            "LANG": "en_US.UTF-8", 
+            "LC_ALL": "en_US.UTF-8", 
+            "LC_MESSAGES": "en_US.UTF-8", 
+            "LOGNAME": "root", 
+            "MAIL": "/var/mail/root", 
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin", 
+            "PWD": "/root", 
+            "SHELL": "/bin/bash", 
+            "SHLVL": "1", 
+            "SSH_CLIENT": "10.0.50.11 53590 22", 
+            "SSH_CONNECTION": "10.0.50.11 53590 172.31.0.52 22", 
+            "SSH_TTY": "/dev/pts/1", 
+            "TERM": "rxvt-256color", 
+            "USER": "root", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_fips": false, 
+        "ansible_form_factor": "Expansion Chassis", 
+        "ansible_fpPort1": {
+            "active": false, 
+            "device": "fpPort1", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort10": {
+            "active": false, 
+            "device": "fpPort10", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort11": {
+            "active": false, 
+            "device": "fpPort11", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort12": {
+            "active": false, 
+            "device": "fpPort12", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort13": {
+            "active": false, 
+            "device": "fpPort13", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort14": {
+            "active": false, 
+            "device": "fpPort14", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort15": {
+            "active": false, 
+            "device": "fpPort15", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort16": {
+            "active": false, 
+            "device": "fpPort16", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort17": {
+            "active": false, 
+            "device": "fpPort17", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort18": {
+            "active": false, 
+            "device": "fpPort18", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort19": {
+            "active": false, 
+            "device": "fpPort19", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort2": {
+            "active": false, 
+            "device": "fpPort2", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort20": {
+            "active": false, 
+            "device": "fpPort20", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort21": {
+            "active": false, 
+            "device": "fpPort21", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort22": {
+            "active": false, 
+            "device": "fpPort22", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort23": {
+            "active": false, 
+            "device": "fpPort23", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort24": {
+            "active": false, 
+            "device": "fpPort24", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort25": {
+            "active": false, 
+            "device": "fpPort25", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort26": {
+            "active": false, 
+            "device": "fpPort26", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort27": {
+            "active": false, 
+            "device": "fpPort27", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort28": {
+            "active": false, 
+            "device": "fpPort28", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort29": {
+            "active": false, 
+            "device": "fpPort29", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort3": {
+            "active": false, 
+            "device": "fpPort3", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort30": {
+            "active": false, 
+            "device": "fpPort30", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort31": {
+            "active": false, 
+            "device": "fpPort31", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort32": {
+            "active": false, 
+            "device": "fpPort32", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort33": {
+            "active": false, 
+            "device": "fpPort33", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort34": {
+            "active": false, 
+            "device": "fpPort34", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort35": {
+            "active": false, 
+            "device": "fpPort35", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort36": {
+            "active": false, 
+            "device": "fpPort36", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort37": {
+            "active": false, 
+            "device": "fpPort37", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort38": {
+            "active": false, 
+            "device": "fpPort38", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort39": {
+            "active": false, 
+            "device": "fpPort39", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort4": {
+            "active": false, 
+            "device": "fpPort4", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort40": {
+            "active": false, 
+            "device": "fpPort40", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort41": {
+            "active": false, 
+            "device": "fpPort41", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort42": {
+            "active": false, 
+            "device": "fpPort42", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort43": {
+            "active": false, 
+            "device": "fpPort43", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort44": {
+            "active": false, 
+            "device": "fpPort44", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort45": {
+            "active": false, 
+            "device": "fpPort45", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort46": {
+            "active": false, 
+            "device": "fpPort46", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort47": {
+            "active": false, 
+            "device": "fpPort47", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort48": {
+            "active": false, 
+            "device": "fpPort48", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort49": {
+            "active": false, 
+            "device": "fpPort49", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort5": {
+            "active": false, 
+            "device": "fpPort5", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort50": {
+            "active": false, 
+            "device": "fpPort50", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort51": {
+            "active": false, 
+            "device": "fpPort51", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort52": {
+            "active": false, 
+            "device": "fpPort52", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort53": {
+            "active": false, 
+            "device": "fpPort53", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort54": {
+            "active": false, 
+            "device": "fpPort54", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort6": {
+            "active": false, 
+            "device": "fpPort6", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort7": {
+            "active": false, 
+            "device": "fpPort7", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort8": {
+            "active": false, 
+            "device": "fpPort8", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fpPort9": {
+            "active": false, 
+            "device": "fpPort9", 
+            "macaddress": "8c:ea:1b:93:fb:b8", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_fqdn": "localhost", 
+        "ansible_hostname": "act-5812", 
+        "ansible_interfaces": [
+            "ma1", 
+            "fpPort35", 
+            "bond0", 
+            "fpPort32", 
+            "vethb18f297", 
+            "fpPort52", 
+            "fpPort10", 
+            "fpPort33", 
+            "bcm0", 
+            "fpPort53", 
+            "fpPort30", 
+            "dummy0", 
+            "fpPort31", 
+            "fpPort47", 
+            "fpPort46", 
+            "fpPort45", 
+            "fpPort44", 
+            "fpPort43", 
+            "fpPort42", 
+            "fpPort41", 
+            "fpPort26", 
+            "fpPort29", 
+            "lo", 
+            "fpPort37", 
+            "lo0", 
+            "fpPort49", 
+            "fpPort48", 
+            "br-62a13ede064d", 
+            "fpPort13", 
+            "fpPort21", 
+            "docker0", 
+            "fpPort20", 
+            "fpPort39", 
+            "fpPort23", 
+            "fpPort22", 
+            "fpPort51", 
+            "sit0", 
+            "fpPort25", 
+            "fpPort18", 
+            "veth263bcfc", 
+            "fpPort24", 
+            "fpPort54", 
+            "fpPort19", 
+            "fpPort27", 
+            "fpPort50", 
+            "ip6tnl0", 
+            "fpPort38", 
+            "veth7b57d5c", 
+            "fpPort36", 
+            "fpPort11", 
+            "fpPort12", 
+            "fpPort40", 
+            "fpPort14", 
+            "fpPort15", 
+            "fpPort16", 
+            "fpPort17", 
+            "fpPort6", 
+            "fpPort7", 
+            "fpPort4", 
+            "fpPort5", 
+            "fpPort2", 
+            "fpPort3", 
+            "fpPort1", 
+            "veth09e2aa9", 
+            "fpPort9", 
+            "fpPort34", 
+            "fpPort8", 
+            "fpPort28"
+        ], 
+        "ansible_ip6tnl0": {
+            "active": false, 
+            "device": "ip6tnl0", 
+            "macaddress": "00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00", 
+            "mtu": 1452, 
+            "promisc": false
+        }, 
+        "ansible_kernel": "3.16.43-OpenNetworkLinux", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "host", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_lo0": {
+            "active": true, 
+            "device": "lo0", 
+            "ipv4": {
+                "address": "192.168.1.1", 
+                "broadcast": "global", 
+                "netmask": "255.255.255.255", 
+                "network": "192.168.1.1"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::142f:f2ff:fe81:4113", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "16:2f:f2:81:41:13", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_lsb": {
+            "codename": "jessie", 
+            "description": "Debian GNU/Linux 8.8 (jessie)", 
+            "id": "Debian", 
+            "major_release": "8", 
+            "release": "8.8"
+        }, 
+        "ansible_ma1": {
+            "active": true, 
+            "device": "ma1", 
+            "ipv4": {
+                "address": "172.31.0.52", 
+                "broadcast": "172.31.0.255", 
+                "netmask": "255.255.255.0", 
+                "network": "172.31.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::8eea:1bff:fe93:fbb7", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "8c:ea:1b:93:fb:b7", 
+            "module": "igb", 
+            "mtu": 1500, 
+            "pciid": "0000:00:14.0", 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_memfree_mb": 5500, 
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 6993, 
+                "used": 924
+            }, 
+            "real": {
+                "free": 5500, 
+                "total": 7917, 
+                "used": 2417
+            }, 
+            "swap": {
+                "cached": 0, 
+                "free": 0, 
+                "total": 0, 
+                "used": 0
+            }
+        }, 
+        "ansible_memtotal_mb": 7917, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/sdb6", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,data=ordered", 
+                "size_available": 3111157760, 
+                "size_total": 6202916864, 
+                "uuid": "b1a5a502-520d-4139-a8a2-ca24687b8751"
+            }, 
+            {
+                "device": "/dev/sdb5", 
+                "fstype": "ext4", 
+                "mount": "/mnt/onl/images", 
+                "options": "ro,relatime,data=ordered", 
+                "size_available": 777809920, 
+                "size_total": 1023303680, 
+                "uuid": "2a4196d4-724c-4f98-a260-b5f72c9b9cef"
+            }, 
+            {
+                "device": "/dev/sdb3", 
+                "fstype": "ext4", 
+                "mount": "/mnt/onl/boot", 
+                "options": "ro,relatime,data=ordered", 
+                "size_available": 94114816, 
+                "size_total": 125783040, 
+                "uuid": "9e109c40-5b9c-4e90-ac9d-10caf0edbaf6"
+            }, 
+            {
+                "device": "/dev/sdb4", 
+                "fstype": "ext4", 
+                "mount": "/mnt/onl/config", 
+                "options": "ro,relatime,data=ordered", 
+                "size_available": 114795520, 
+                "size_total": 125783040, 
+                "uuid": "927a5ac8-bcaa-42e6-a8a1-3745788e8e88"
+            }, 
+            {
+                "device": "/dev/sdb6", 
+                "fstype": "ext4", 
+                "mount": "/var/lib/docker/overlay", 
+                "options": "rw,relatime,data=ordered", 
+                "size_available": 3111174144, 
+                "size_total": 6202916864, 
+                "uuid": "b1a5a502-520d-4139-a8a2-ca24687b8751"
+            }
+        ], 
+        "ansible_nodename": "act-5812", 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "GenuineIntel", 
+            "Intel(R) Atom(TM) CPU  C2538  @ 2.40GHz", 
+            "GenuineIntel", 
+            "Intel(R) Atom(TM) CPU  C2538  @ 2.40GHz", 
+            "GenuineIntel", 
+            "Intel(R) Atom(TM) CPU  C2538  @ 2.40GHz", 
+            "GenuineIntel", 
+            "Intel(R) Atom(TM) CPU  C2538  @ 2.40GHz"
+        ], 
+        "ansible_processor_cores": 4, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 1, 
+        "ansible_processor_vcpus": 4, 
+        "ansible_product_name": "AS5812-54T", 
+        "ansible_product_serial": "581254T1653001", 
+        "ansible_product_uuid": "03000200-0400-0500-0006-000700080009", 
+        "ansible_product_version": "R01A", 
+        "ansible_python_version": "2.7.9", 
+        "ansible_selinux": false, 
+        "ansible_service_mgr": "sysvinit", 
+        "ansible_sit0": {
+            "active": false, 
+            "device": "sit0", 
+            "macaddress": "00:00:00:00", 
+            "mtu": 1480, 
+            "promisc": false
+        }, 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAIroHNx/w/oS7v+QTuuckemyvHRFhg2kdAf3W99vL0LWyKm5S4J1LZybKkkHmORI6B+VVOmEGH+/SuslPgKLD1HwCyOfV4/PQR334Fbh2skkrE0Xte6BzO8ndk9UEKgQ99pZ1OoUhLCdahbNp25oe19ypLn+/RHhcrM0w0k4ZgWtAAAAFQCCMaOg8oz5qcCK8Vp/4Nq/liIsLQAAAIBDdXY4EftSVo+i7Jq6e1/If/lMWYzYXyFuEtfxWjTVli0XqwXFHkkr52qLVTQcYVHGW2zNI483beDmamKLlw0MctxLUup0b/XNvDS4QBbiGvqChXxqfqrANlcMSWQpuSXLJJMAjZcX1eFta38ZgXPCUMV432X9J5tiNJ24ASWbVgAAAIB29hcN26XFnCrLzzy6rOfmfumTodtWUjoLcM083xLJ85cn/1uBIGkzoeJ6S47W0Ct5AY2sPqtIw479cBUoIIb//Cu2LYUZPJTP4nVPclN1wTODImHfoXnGouRjWzm+TB+E0VMzYDPjD2Ro1Tchhl2x/XnmnsKIL6kmLEhzo1622w==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNWm+CoYdjm9RK57lN6UODIfRTApMFIeQNFl4nmSZsOPSL28Pxb+v/txSo4puoNsMUZgSuKzaOLsnjruHNK3aGU=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIN4uSn9+OSluIhuKuQugm3vqE7WLjSG1Kct2znhLEgNH", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC5nkKZIEmqtYv7fVALTe6CEfhZYV6yugS3QME8N4qHf54mauDoXp5x/5NDEvory3eV2QbELlrKP1BYFr1nhs+Xb+qNFMwKoLbDveVhwBETeddjN8VL0oaUi9DVXY+z1r8CDWvU1w33dKRAfe34iDp+SkMNYC8EKnAJTRIR8xMHMQrv9xhYNB/yfnEBAH8W0DH0D+HwgSKjW83wczkRgaDAAnz+iAq/yrOtyVYoYkOAb09j2F3p+PtaGWoPStiQVLA505DmsiEuWsHOiGc8oP9ncX3HRAZ0kEA9VbUoozbd8WF76Zxtnn7Oj/r1fHD+JPFe98GAgkJSktemozcRIktv", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Accton", 
+        "ansible_uptime_seconds": 80325, 
+        "ansible_user_dir": "/root", 
+        "ansible_user_gecos": "root", 
+        "ansible_user_gid": 0, 
+        "ansible_user_id": "root", 
+        "ansible_user_shell": "/bin/bash", 
+        "ansible_user_uid": 0, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_veth09e2aa9": {
+            "active": true, 
+            "device": "veth09e2aa9", 
+            "ipv6": [
+                {
+                    "address": "fe80::b87c:97ff:fe4c:2608", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "ba:7c:97:4c:26:08", 
+            "mtu": 1500, 
+            "promisc": true, 
+            "type": "ether"
+        }, 
+        "ansible_veth263bcfc": {
+            "active": true, 
+            "device": "veth263bcfc", 
+            "ipv6": [
+                {
+                    "address": "fe80::5c76:9fff:fe49:ae5b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "5e:76:9f:49:ae:5b", 
+            "mtu": 1500, 
+            "promisc": true, 
+            "type": "ether"
+        }, 
+        "ansible_veth7b57d5c": {
+            "active": true, 
+            "device": "veth7b57d5c", 
+            "ipv6": [
+                {
+                    "address": "fe80::74ed:39ff:fe17:d93b", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "76:ed:39:17:d9:3b", 
+            "mtu": 1500, 
+            "promisc": true, 
+            "type": "ether"
+        }, 
+        "ansible_vethb18f297": {
+            "active": true, 
+            "device": "vethb18f297", 
+            "ipv6": [
+                {
+                    "address": "fe80::ec45:5bff:fed5:7d94", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "ee:45:5b:d5:7d:94", 
+            "mtu": 1500, 
+            "promisc": true, 
+            "type": "ether"
+        }, 
+        "ansible_virtualization_role": "NA", 
+        "ansible_virtualization_type": "NA", 
+        "module_setup": true
+    }, 
+    "changed": false
+}
