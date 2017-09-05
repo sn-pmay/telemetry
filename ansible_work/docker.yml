@@ -11,7 +11,7 @@
       when: ansible_date_time.year < 2017
     
     - name: Slam the clock
-      command: ntpd -q -g -x
+      command: timeout -k 10 10 ntpd -q -g -x
       tags:
         - ntpd_ntpdate
       ignore_errors: true
